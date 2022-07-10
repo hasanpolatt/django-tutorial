@@ -14,4 +14,4 @@ class Article(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     content = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="images/")
+

@@ -5,6 +5,11 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    {% for article in articles %}
+        <a href="{% url 'single' article.id %}"><h1>{{ article.title }}</h1></a>
+        <p>Posted by: {{ article.author }}, Posted in: {{ article.category }}</p>
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" />
+        <p>{{ article.content }}</p>
+    {% endfor %}
 </body>
 </html>

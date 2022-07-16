@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Single Page</title>
+    <title>Blog Page</title>
 </head>
 <body>
-
+        <h1>{{ single.title }}</h1>
+        <p>Posted by: {{ single.author }}, Posted in: {{ single.category }}</p>
+        <img src="{{ single.image.url }}" alt="{{ single.title }}" />
+        <p>{{ single.content }}</p>
 </body>
 </html>

@@ -5,6 +5,6 @@ def index(request):
     articles = Article.objects.all()
     return render(request, 'index.html', {'articles': articles})
 
-def single(request):
+def single(request, id):
     single = Article.objects.get(id=id)
     return render(request, 'single.html', {'single': single})

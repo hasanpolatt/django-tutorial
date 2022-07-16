@@ -7,14 +7,6 @@ class Author(models.Model):
     email = models.EmailField()
     info = models.TextField()
 
-class Question(models.Model):
-    questionText = models.CharField(max_length=200)
-    pubDate = models.DateTimeField('date published')
-    def __str__(self):
-        return self.questionText
-    def wasPublishedRecently(self):
-        return self.pubDate >= timezone.now() - datetime.timedelta(days=1)
-
 class Category(models.Model):
     category = models.CharField(max_length=50)
     description = models.TextField()
@@ -24,4 +16,5 @@ class Article(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     content = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="images/")
 
